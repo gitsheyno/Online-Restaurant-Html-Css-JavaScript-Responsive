@@ -1,0 +1,652 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+    transition: all 0.2s linear;
+}
+
+:root {
+    --primary: #ff3838;
+}
+
+section {
+    padding: 2rem 6rem;
+}
+
+*::selection {
+    background: var(--primary);
+    color: #fff;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+
+}
+
+body {
+    background: #f7f7f7;
+}
+
+header {
+    background-color: rgb(194, 194, 194);
+    position: fixed;
+    z-index: 10000;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 6rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+header .nav {
+    display: flex;
+    list-style-type: none;
+}
+
+header .nav a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.436);
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+}
+
+header .nav a:hover {
+    color: var(--primary);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.545);
+    cursor: pointer;
+}
+
+.logo i {
+    color: var(--primary);
+}
+
+.menu {
+    border: 1.6px solid #666;
+    border-radius: 0.3rem;
+    padding: 10px;
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: #666;
+    display: none;
+}
+
+
+section.home {
+    padding: 120px 6rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    min-height: 100vh;
+    align-items: center;
+    background: url(../images/home-bg.jpg);
+}
+
+section.home .content {
+    flex: 1 1 40rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+section.home .img {
+    flex: 1 1 40rem;
+}
+
+section.home img {
+    width: 100%;
+    animation: float 3s linear infinite;
+}
+
+.home .content h3 {
+    font-size: 4rem;
+}
+
+.home .content p {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+.home .content a {
+    margin-top: 20px;
+    color: var(--primary);
+    padding: 0.8rem 1.8rem;
+    border: 1.5px solid var(--primary);
+    border-radius: 10px;
+}
+
+section#specialty {
+    padding: 2rem 6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#specialty h1 {
+    color: #666;
+    font-size: 4rem;
+    font-weight: 500;
+
+}
+
+#specialty h1 span {
+    color: var(--primary);
+}
+
+.dishes {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 300px);
+    gap: 20px;
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.dish {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    background-color: #fff;
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(102, 102, 102, 0.215);
+}
+
+.dish div {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    top: -100%;
+}
+
+.dish:hover div {
+    top: 0;
+}
+
+
+.dish div img {
+    width: 100%;
+    height: 100%;
+}
+
+.dish h4 {
+    margin-top: 10px;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.dish p {
+    color: #666;
+    margin-top: 10px;
+}
+
+section#popularity {
+
+
+    padding: 2rem 6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#popularity h1 {
+    color: #666;
+    font-size: 4rem;
+    font-weight: 500;
+
+}
+
+#popularity h1 span {
+    color: var(--primary);
+}
+
+.boxes {
+
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 300px);
+    gap: 20px;
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.box {
+    padding: 25px 20px 50px 20px;
+    border: 1px solid #666;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    box-shadow: 0 0.9rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.box div {
+    position: relative;
+
+}
+
+.box div img {
+    width: 100%;
+}
+
+.box div p {
+    position: absolute;
+    background-color: var(--primary);
+    top: 10px;
+    left: 10px;
+    color: #fff;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.box h4 {
+    margin-top: 20px;
+    font-size: 1rem;
+    color: var(--primary);
+}
+
+.box .btn {
+    margin-top: 32px;
+    color: var(--primary);
+    padding: 10px 30px;
+    background-color: #fff;
+    border: 1px solid var(--primary);
+    border-radius: 10px;
+}
+
+.star {
+    margin-top: 20px;
+}
+
+.star i {
+    color: black;
+
+}
+
+section#steps {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 6rem;
+}
+
+#steps h1 {
+    color: #666;
+    font-size: 4rem;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+#steps h1 span {
+    color: var(--primary);
+}
+
+#steps .steps {
+    display: grid;
+    grid-template-columns: repeat(4, 200px);
+    gap: 30px;
+
+}
+
+.steps div {
+    text-align: center;
+}
+
+.steps div p {
+    font-size: 1.7rem;
+    color: #666;
+    font-weight: 600;
+}
+
+.steps div img {
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    border: 10px solid white;
+
+}
+
+section#gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 6rem;
+}
+
+#gallery h1 {
+    color: #666;
+    font-size: 4rem;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+#gallery h1 span {
+    color: var(--primary);
+}
+
+
+#gallery .galleries {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 300px);
+    gap: 30px;
+
+}
+
+.galleries .photo {
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0.9rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.galleries .photo img {
+    width: 100%;
+}
+
+.galleries .photo div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: -100%;
+    left: 0;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.photo div h4 {
+    font-size: 1.4rem;
+}
+
+.photo div p {
+    margin-top: 20px;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.photo .btn {
+    margin-top: 30px;
+    color: var(--primary);
+    padding: 10px 30px;
+    background-color: #fff;
+    border: 1px solid var(--primary);
+    border-radius: 10px;
+
+}
+
+.galleries .photo:hover div {
+    top: 0;
+}
+
+section#review {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 6rem;
+}
+
+#review h1 {
+    color: #666;
+    font-size: 4rem;
+    font-weight: 500;
+    margin-bottom: 30px;
+    margin-bottom: 50px;
+}
+
+#review h1 span {
+    color: var(--primary);
+}
+
+
+
+#review .review-box {
+    display: grid;
+    grid-template-columns: repeat(3, 300px);
+    grid-template-rows: 300px;
+    gap: 30px;
+}
+
+.review-box .review {
+    position: relative;
+    background-color: #666;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.review h4 {
+    margin-top: 30px;
+    font-size: 1.4rem;
+}
+
+.review i {
+    color: #ff3838;
+}
+
+.review p {
+    margin-top: 10px;
+}
+
+.review-box .review img {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    left: 50%;
+    top: -40px;
+    border: 5px solid white;
+    transform: translateX(-50%);
+}
+
+section#order {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 6rem;
+}
+
+.order-box {
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    margin-top: 30px;
+    background-color: white;
+}
+
+.form .row {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.form .row input {
+    padding: 10px;
+    border: 1px solid rgba(102, 102, 102, 0.522);
+    width: 50%;
+}
+
+.text textarea{
+    padding: 10px;
+    width: 100%;
+    resize: none;
+    height: 80px;
+    border: 1px solid rgba(102, 102, 102, 0.522);
+}
+.form{
+    flex: 1 1 60%;
+}
+
+.order-image{
+    flex: 1 1 40%;
+}
+.submit{
+    margin-top: 20px;
+    padding: 10px 25px;
+    background-color: white;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+}
+.order-image img {
+    width: 100%;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(10rem);
+    }
+
+    50% {
+        transform: translateY(3rem);
+    }
+}
+
+@media(max-width:991px) {
+    html {
+        font-size: 12px;
+    }
+
+    header {
+        padding: 2rem;
+    }
+}
+
+@media(max-width:768px) {
+    .menu {
+        display: initial;
+        font-size: 1.5rem;
+    }
+
+    .dishes {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .boxes {
+
+
+        grid-template-columns: repeat(1, 300px);
+
+    }
+
+    #steps .steps {
+        grid-template-columns: repeat(2, 200px);
+    }
+
+    #gallery .galleries {
+
+        grid-template-columns: repeat(3, 220px);
+        gap: 20px;
+
+    }
+
+    .galleries .photo a {
+        padding: 10px;
+    }
+
+    #review .review-box {
+        display: grid;
+        grid-template-columns: repeat(3, 200px);
+        grid-template-rows: 250px;
+        gap: 30px;
+    }
+
+    header .nav {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        display: none;
+        padding: 10px;
+        background-color: rgb(170 170 170);
+        ;
+    }
+
+    header .nav.active {
+        display: block;
+    }
+
+    header .nav a {
+        display: block;
+        margin-top: 10px;
+        border-left: 2px solid var(--primary);
+        background-color: #fff;
+        padding: 15px 10px;
+    }
+
+    .order-box {
+        
+        display: flex;
+        flex-wrap: wrap;
+
+    }
+    
+    .form .row {
+        flex-direction: column;
+    }
+
+    .form .row input{
+        width: 100%;
+    }
+}
+
+
+@media(max-width:500px) {
+    html {
+        font-size: 10px;
+    }
+
+    .dishes {
+        grid-template-columns: 1fr;
+    }
+
+    #steps .steps {
+        grid-template-columns: repeat(1, 200px);
+    }
+
+    #gallery .galleries {
+
+        grid-template-columns: repeat(1, 220px);
+        gap: 20px;
+
+    }
+
+    .galleries .photo div h4 {
+        font-size: 1.7rem;
+    }
+
+    .galleries .photo div p {
+        font-size: 1.2rem;
+    }
+
+    #review .review-box {
+        display: grid;
+        grid-template-columns: repeat(1, 250px);
+        grid-template-rows: 250px;
+        gap: 50px;
+    }
+
+
+}
